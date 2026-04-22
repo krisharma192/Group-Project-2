@@ -1,19 +1,14 @@
 # MIST4610 – GROUP PROJECT A5
 
 
+## Group Information
 
-#Group Information 
+## Case Summary
 
+## Conceptual Model
 
-#Case summary
+## Data Quality Assessment
 
-#Conceptual model
+## Data Cleaning Process
 
-
-#Data quality assessment
-
-
-#Data cleaning process
-
-
-#Queries
+## Queries
