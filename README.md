@@ -199,5 +199,15 @@ Currently, Northern Outfitters relies on Excel spreadsheets to manage its operat
 | `EMC-M01` | `CA` |
 
 ## Data Cleaning Process
+1. Resolved Date & Country Ambiguity
+    We separated the country indicator from embedded ID fields and used it to guide how date values were interpreted. This allowed us to standardize all records into a consistent ISO date format across regions.
+2. Standardized Metric and Imperial Measurements
+    We converted all product measurements into a single, consistent system to eliminate regional discrepancies. This ensured uniformity across datasets and made comparisons and analysis more reliable.
+3. Deconstructed “Blob” Customer Fields
+    We extracted structured data from unformatted text fields using pattern recognition and string parsing techniques. This enabled us to organize customer details into distinct, usable columns for downstream processes.
+4. Normalized Financial & Tax Formats
+    We standardized all financial values by converting inconsistent formats into uniform numeric representations. This ensured accurate calculations and consistent application of tax rules across different regions.
+5. Deduplicated Products & Variants
+    We cleaned and standardized product naming conventions to identify duplicate entries. This allowed us to consolidate records and create a clearer, more accurate view of inventory and product performance.
 
 ## Queries
