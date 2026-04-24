@@ -274,5 +274,3 @@ Business Justification: Finding the high-value customers gives Northline Outfitt
 <img width="786" height="444" alt="image" src="https://github.com/user-attachments/assets/8f36139e-9383-49b5-b33a-07f664dbdf54" />
 
 Business Justification: Products that are sitting there on shelves with no sale history and are not discontinued represent inventory that is taking up space without any gains/revenue. This query can help management find where they can make room for new products that have greater earning potentials and remove products that are hurting more than helping.
-
-Business Justification:
