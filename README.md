@@ -248,4 +248,19 @@ We converted all measurements into standard units (grams and centimeters) using 
 
 ### 17. Country Code Extraction from Identifiers
 We extracted country codes from ID prefixes using functions such as LEFT(). These values were stored in separate columns for employees and orders. This allowed us to standardize geographic data independently of identifiers.
-## Queries
+
+## Required Queries 
+1. Which products generated the highest total sales revenue, by country
+<img width="807" height="637" alt="image" src="https://github.com/user-attachments/assets/1c676e6c-5c9c-4ee1-b381-536a68f3fc32" />
+
+2. Which employees handled the largest number of orders, and how do their results compare with other employees under the same manager
+<img width="798" height="639" alt="image" src="https://github.com/user-attachments/assets/29501616-7dab-49f6-9c69-0bbd9c49cb8e" />
+
+3. Which vendors supply products that appear in more than one category?
+<img width="922" height="637" alt="image" src="https://github.com/user-attachments/assets/aed4b807-d8c2-49c8-9339-d97c1ca3b8be" />
+
+
+
+
+
+## Creative Queries
