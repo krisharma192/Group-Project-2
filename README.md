@@ -259,8 +259,16 @@ We extracted country codes from ID prefixes using functions such as LEFT(). Thes
 3. Which vendors supply products that appear in more than one category?
 <img width="922" height="637" alt="image" src="https://github.com/user-attachments/assets/aed4b807-d8c2-49c8-9339-d97c1ca3b8be" />
 
-
-
-
-
 ## Creative Queries
+4. What is the return rate by product category?
+<img width="986" height="589" alt="image" src="https://github.com/user-attachments/assets/e131abf6-5888-49b5-893e-278459622c2f" />
+Business Justification:
+
+5. Which customers have spent the most and what is their loyalty status?
+<img width="935" height="640" alt="image" src="https://github.com/user-attachments/assets/1e47d566-a85a-48b1-9da0-fbcc0de70565" />
+Business Justification:
+
+6. Which products have never been sold but are not discontinued?
+7. <img width="786" height="444" alt="image" src="https://github.com/user-attachments/assets/8f36139e-9383-49b5-b33a-07f664dbdf54" />
+
+Business Justification:
