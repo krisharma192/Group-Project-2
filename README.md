@@ -262,14 +262,17 @@ We extracted country codes from ID prefixes using functions such as LEFT(). Thes
 ## Creative Queries
 4. What is the return rate by product category?
 <img width="986" height="589" alt="image" src="https://github.com/user-attachments/assets/e131abf6-5888-49b5-893e-278459622c2f" />
+
 Business Justification: If a certain category has high return rates, it may be signal to further investigate what is causing the return rates in these categories. Northline Outfitters management can prioritize fixing these issues, causing the return rates to decrease in the future.
 
 5. Which customers have spent the most and what is their loyalty status?
 <img width="935" height="640" alt="image" src="https://github.com/user-attachments/assets/1e47d566-a85a-48b1-9da0-fbcc0de70565" />
+
 Business Justification: Finding the high-value customers gives Northline Outfitters the opportunity to get to know who is driving revenue. Their loyalty status indication helps show whether top spenders are being rewarded and their relationship is being rewarded through the loyalty program. Further, marketing could try to target the customers who are high spenders but are not enrolled for outreach.
 
 6. Which products have never been sold but are not discontinued?
 <img width="786" height="444" alt="image" src="https://github.com/user-attachments/assets/8f36139e-9383-49b5-b33a-07f664dbdf54" />
+
 Business Justification: Products that are sitting there on shelves with no sale history and are not discontinued represent inventory that is taking up space without any gains/revenue. This query can help management find where they can make room for new products that have greater earning potentials and remove products that are hurting more than helping.
 
 Business Justification:
