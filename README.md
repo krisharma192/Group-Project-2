@@ -15,8 +15,7 @@ Northern Outfitters is a rapidly growing online retail company that specializes 
 Currently, Northern Outfitters relies on Excel spreadsheets to manage its operational data, including inventory, sales, and vendor information. However, this approach has resulted in disorganized and inconsistent datasets, making it difficult to efficiently track operations, maintain data accuracy, and generate meaningful insights. As the company continues to expand, these limitations have become increasingly problematic, hindering scalability and decision-making.
 
 ## Conceptual Model
-<img width="864" height="1319" alt="MIST DM PNG GitHub" src="https://github.com/user-attachments/assets/a8222fa2-be02-4071-931d-41179ad70ef7" />
-
+<img width="834" height="1319" alt="DM" src="https://github.com/user-attachments/assets/d2b39918-8ab1-41f5-ab0d-5ab68e316034" />
 
 ## Data Quality Assessment
 ### 1. SKU Case Standardization
