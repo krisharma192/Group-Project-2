@@ -198,15 +198,54 @@ Currently, Northern Outfitters relies on Excel spreadsheets to manage its operat
 | `EMC-M01` | `CA` |
 
 ## Data Cleaning Process
-1. Resolved Date & Country Ambiguity
-    We separated the country indicator from embedded ID fields and used it to guide how date values were interpreted. This allowed us to standardize all records into a consistent ISO date format across regions.
-2. Standardized Metric and Imperial Measurements
-    We converted all product measurements into a single, consistent system to eliminate regional discrepancies. This ensured uniformity across datasets and made comparisons and analysis more reliable.
-3. Deconstructed “Blob” Customer Fields
-    We extracted structured data from unformatted text fields using pattern recognition and string parsing techniques. This enabled us to organize customer details into distinct, usable columns for downstream processes.
-4. Normalized Financial & Tax Formats
-    We standardized all financial values by converting inconsistent formats into uniform numeric representations. This ensured accurate calculations and consistent application of tax rules across different regions.
-5. Deduplicated Products & Variants
-    We cleaned and standardized product naming conventions to identify duplicate entries. This allowed us to consolidate records and create a clearer, more accurate view of inventory and product performance.
+### 1. SKU Case Standardization
+We standardized all SKU values by converting them to uppercase using Excel’s UPPER() function. This eliminated inconsistencies between lowercase and uppercase entries and ensured reliable joins across datasets. We also used conditional formatting to verify uniqueness.
 
+### 2. Sale Date Standardization
+We converted all date formats into a consistent ISO format (YYYY-MM-DD) using Excel’s date formatting tools. For ambiguous cases, we referenced country indicators to determine whether the format followed U.S. or Canadian conventions. This ensured consistency and accurate chronological analysis.
+
+### 3. Customer Information Parsing
+We split the customer_info field into separate attributes (customer name and customer type) using “Text to Columns” and delimiter-based formulas. Functions like TRIM() and LEFT() were used to clean and extract values. Missing classifications were assigned a default value of “Standard.”
+
+### 4. Payment Method Standardization
+We standardized payment methods by applying consistent naming conventions using PROPER() and find-and-replace logic. Variations such as “MC” and “Mastercard” were mapped to a single format. This ensured accurate grouping in payment analysis.
+
+### 5. Unit Price and Cost Split
+We separated currency codes from numeric values using functions like LEFT(), RIGHT(), and MID(). Numeric values were converted into decimal format, while missing currency codes were labeled as “Unknown.” This enabled proper calculations and standardization.
+
+### 6. Discount Standardization
+We converted all discount formats into a consistent decimal format using conditional formulas. Percentage symbols and text labels (e.g., “promo5”) were removed or interpreted accordingly. Missing values were standardized to 0.00 to ensure accurate pricing calculations.
+
+### 7. Tax Rate Standardization
+We standardized tax values by converting all formats into decimals using Excel formulas. Text entries such as “HST 13%” were parsed to extract the numeric portion. Null or missing values were replaced with 0.00 for consistency.
+
+### 8. Line Total Cleaning
+We removed symbols such as $ using SUBSTITUTE() and converted values into numeric format. For missing values, we recalculated line totals using quantity, unit price, discount, and tax. This ensured all rows had accurate financial data.
+
+### 9. Ship Country Standardization
+We standardized country values using find-and-replace (e.g., “USA” → “US”, “Canada” → “CA”). Missing values were inferred from order ID prefixes. This ensured consistency for geographic segmentation.
+
+### 10. Quantity Standardization
+We cleaned quantity values by removing text (e.g., “2 units”) using SUBSTITUTE() and converting all entries into integers. Invalid entries were corrected manually. This ensured quantities were usable in calculations.
+
+### 11. Format "Null" Values
+We standardized null values by replacing “NULL” entries using Excel’s find-and-replace function. Logical fields were assigned default values such as “N.” This prevented errors during import and analysis.
+
+### 12. Duplicate SKU Values
+We identified duplicates using Excel’s “Remove Duplicates” tool and conditional formatting. True duplicates were removed, while valid product variants were retained. This preserved data accuracy while eliminating redundancy.
+
+### 13. Product Category Standardization
+We consolidated inconsistent category labels using mapping logic and find-and-replace techniques. Variations with different delimiters or wording were grouped into a single standardized category. This improved reporting consistency.
+
+### 14. Vendor Phone and Representative Standardization
+We standardized phone numbers into a consistent format using text formatting and manual corrections. Representative names were cleaned by removing titles and notes using text functions. This ensured uniform vendor records.
+
+### 15. Reorder Level Standardization
+We converted text-based values such as “ten” into numeric format through manual replacement and validation. All values were stored as integers. Missing values were left as null where appropriate.
+
+### 16. Weight and Length Unit Standardization
+We converted all measurements into standard units (grams and centimeters) using Excel formulas and conversion factors. Text parsing was used to extract numeric values before applying conversions. This ensured consistency across product records.
+
+### 17. Country Code Extraction from Identifiers
+We extracted country codes from ID prefixes using functions such as LEFT(). These values were stored in separate columns for employees and orders. This allowed us to standardize geographic data independently of identifiers.
 ## Queries
