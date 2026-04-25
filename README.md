@@ -17,6 +17,17 @@ Currently, Northern Outfitters relies on Excel spreadsheets to manage its operat
 ## Conceptual Model
 <img width="834" height="1319" alt="DM" src="https://github.com/user-attachments/assets/d2b39918-8ab1-41f5-ab0d-5ab68e316034" />
 
+The data model for Northline Outfitters consists of 9 entities that capture the full lifecycle of a customer order from vendor to sale.
+Manager stores the managers who oversee employees. Each manager supervises one or more employees.
+Employee represents the staff members who process orders. Each employee reports to one manager and is assigned a country code based on their ID prefix (EMU for US, EMC for Canada). One employee can handle many orders.
+Customer stores unique customer records parsed from the original sales data. Each customer has a first name, last name, email, customer type, and a loyalty member flag. One customer can place many orders.
+Order represents a single transaction placed by a customer. Each order is handled by one employee and placed by one customer. It captures the sale date, payment method, and shipping destination. One order can contain many order lines.
+Order_Line is the detail level of each order. Each line belongs to one order and references one product. It stores the quantity, unit price, discount, tax rate, line total, and return flag for that specific item on that order.
+Vendor stores the five suppliers that Northline Outfitters purchases inventory from. Each vendor has a name, phone number, and sales representative. One vendor can supply many products.
+Product stores the full product catalog. Each product belongs to one vendor and can optionally reference a parent SKU if it is a variant of another product, making this a recursive self-referencing relationship. One product can appear on many order lines.
+Product_category is the bridge table that connects products to categories. Since one product can belong to multiple categories and one category can contain many products, this is a many to many relationship resolved through this table.
+Category stores the distinct product categories such as Tech, Apparel, Audio, Lifestyle, School, Desk Setup, and Accessories.
+
 ## Data Quality Assessment
 ### 1. SKU Case Standardization
 **Issue:** SKUs appear in both uppercase and lowercase across both the Sales and Product Supplied sheets, leading to join failures.
